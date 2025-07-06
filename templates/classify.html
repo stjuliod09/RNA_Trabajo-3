@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="classify-wrapper">
+  <div class="classify-card">
+    <h2>Sube una imagen de conductor</h2>
+
+    <form method="post" enctype="multipart/form-data">
+      <label class="file-input">
+        <button type="button">Seleccionar imagen</button>
+        <input type="file"
+               name="image"
+               accept="image/jpeg, image/png"
+               required
+               onchange="this.form.submit()">
+      </label>
+    </form>
+
+    {% if filename %}
+      <img src="{{ url_for('static', filename='uploads/' + filename) }}"
+           alt="Imagen subida"
+           class="preview">
+    {% endif %}
+
+    {% if label %}
+      <p class="result">Resultado: <strong>{{ label }}</strong></p>
+    {% endif %}
+
+    {% if error %}
+      <p class="error">{{ error }}</p>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,289 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+}
+header,
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+nav a {
+  color: #fff;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+main {
+  padding: 2rem;
+}
+section {
+  background: #fff;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.cards-center {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.card-link {
+  flex: 1 1 220px;
+  max-width: 280px;
+  padding: 1.5rem;
+  border: 2px solid #1976d2;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  color: #1976d2;
+  transition: background 0.2s ease-in-out;
+}
+
+.card-link:hover {
+  background: #e3f2fd;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+  padding: 2rem;
+}
+
+.site-footer {
+  margin-top: auto;
+}
+
+.classify-wrapper {
+  display: flex;
+  max-width: 700px;
+  margin: auto;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 45vh;
+}
+
+.classify-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 340px; /* mismo ancho que antes */
+  text-align: center;
+}
+
+.classify-card h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* ----- selector de archivo atractivo ----- */
+.file-input {
+  position: relative;
+  overflow: hidden; /* oculta el <input> real */
+  display: inline-block;
+}
+
+.file-input button {
+  border: none;
+  background: #1976d2;
+  color: #fff;
+  padding: 0.65rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.2s;
+}
+
+.file-input button:hover {
+  background: #125da1;
+}
+
+.file-input input[type="file"] {
+  position: absolute;
+  inset: 0; /* cubre todo el botón */
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* ----- resultados y errores ----- */
+.preview {
+  margin-top: 1rem;
+  max-width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.result {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.error {
+  margin-top: 1rem;
+  color: #c00;
+  font-weight: bold;
+}
+
+/* ---------- Demanda ---------- */
+.demand-wrapper {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.demand-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem 2rem;
+  margin-top: 1.2rem;
+}
+
+.demand-form .field {
+  display: flex;
+  flex-direction: column;
+}
+
+.demand-form label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.demand-form input,
+.demand-form select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.demand-form button.full {
+  grid-column: 1 / -1; /* ocupa todo el ancho */
+  padding: 0.7rem 1rem;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.demand-form button.full:hover {
+  background: #125da1;
+}
+
+.result,
+.error {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+}
+.error {
+  color: #c00;
+  font-weight: bold;
+}
+
+.reco-wrapper {
+  max-width: 560px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem 1.2rem;
+  margin-top: 0.8rem;
+}
+
+.form-grid-2 .field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-grid-2 label {
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.form-grid-2 input,
+.form-grid-2 select {
+  padding: 0.45rem 0.6rem;
+  border: 1px solid #c5c5c5;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  padding: 0.6rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #125da1;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+.title-list {
+  margin-top: 1.4rem;
+}
+
+.reco-list {
+  margin-top: 0.8rem;
+  list-style: none;
+  padding-left: 0;
+}
+
+.reco-list li {
+  padding: 0.45rem 0.6rem;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.reco-list li:hover {
+  background: #f1f7ff;
+}
+
+.reco-list .dest {
+  font-weight: 600;
+}

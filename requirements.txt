@@ -1,0 +1,15 @@
+# Flask y dependencias
+flask
+# Ciencia de datos
+numpy
+pandas
+scikit-learn==1.6.1
+joblib
+# Redes neuronales para clasificación de imágenes
+tensorflow
+# Gráficas
+matplotlib
+# PIL
+Pillow
+# Redes neuronales PyTorch (demanda)
+torch>=2.2

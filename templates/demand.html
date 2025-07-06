@@ -1,0 +1,95 @@
+{% extends 'base.html' %} {% block content %}
+<section class="demand-wrapper">
+  <h2>Predicción de Demanda de Transporte</h2>
+
+  <form method="post" class="demand-form">
+    <!-- Origen / Destino -->
+    <div class="field">
+      <label for="travel_from">Origen</label>
+      <select id="travel_from" name="travel_from" required>
+        <option value="Punto_1">Medellín</option>
+        <option value="Punto_2">Bogotá</option>
+        <option value="Punto_3">Cali</option>
+        <option value="Punto_4">Barranquilla</option>
+        <option value="Punto_5">Cartagena</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="travel_to">Destino</label>
+      <select id="travel_to" name="travel_to" required>
+        <option value="Punto_1">Medellín</option>
+        <option value="Punto_2">Bogotá</option>
+        <option value="Punto_3">Cali</option>
+        <option value="Punto_4">Barranquilla</option>
+        <option value="Punto_5">Cartagena</option>
+      </select>
+    </div>
+
+    <!-- Tipo de vehículo -->
+    <div class="field">
+      <label for="car">Tipo de vehículo</label>
+      <select id="car" name="car_type">
+        {% for t in ['Autobus','Tranvía','microbus','van'] %}
+        <option value="{{ t }}">{{ t }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <!-- Capacidad máxima -->
+    <div class="field">
+      <label for="cap">Capacidad máxima</label>
+      <input id="cap" name="max_capacity" type="number" min="1" required />
+    </div>
+
+    <!-- Método de pago -->
+    <div class="field">
+      <label for="pay">Método de pago</label>
+      <select id="pay" name="payment_method">
+        {% for m in ['App móvil','Efectivo','Tarjeta','Transferencia'] %}
+        <option value="{{ m }}">{{ m }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <!-- Día de la semana -->
+    <div class="field">
+      <label for="day">Día de la semana</label>
+
+      {#-- define la lista solo una vez --#} {% set dias =
+      ['Lunes','Martes','Miércoles', 'Jueves','Viernes','Sábado','Domingo'] %}
+
+      <select id="day" name="day_of_week">
+        {% for d in dias %}
+        <option value="{{ loop.index0 }}">{{ d }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <!-- Mes -->
+    <div class="field">
+      <label for="month">Mes</label>
+      <select id="month" name="month">
+        {% for m in range(1,13) %}
+        <option value="{{ m }}">{{ m }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <!-- Hora -->
+    <div class="field">
+      <label for="hour">Hora (0-23)</label>
+      <input id="hour" name="hour" type="number" min="0" max="23" required />
+    </div>
+
+    <button type="submit" class="full">Predecir</button>
+  </form>
+
+  {% if prediction %}
+  <p class="result">
+    Demanda estimada: <strong>{{ '%.0f'|format(prediction) }}</strong> pasajeros
+  </p>
+  {% elif error %}
+  <p class="error">{{ error }}</p>
+  {% endif %}
+</section>
+{% endblock %}

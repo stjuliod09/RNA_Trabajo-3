@@ -1,0 +1,51 @@
+{% extends 'base.html' %} {% block content %}
+<section class="reco-wrapper">
+  <h2>Recomendador de Destinos</h2>
+
+  <form method="post" class="reco-form form-grid-2">
+    <div class="field">
+      <label>Preferencias</label>
+      <input name="prefs" placeholder="Playa, senderismo" required />
+    </div>
+    <div class="field">
+      <label for="pop">Popularidad</label>
+      <input
+        id="pop"
+        name="Popularity"
+        type="number"
+        min="0"
+        step="1"
+        placeholder="1-10"
+        required
+      />
+    </div>
+    <div class="field">
+      <label>Género</label>
+      <select name="gender">
+        <option value="Male">Hombre</option>
+        <option value="Female">Mujer</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Adultos</label>
+      <input type="number" name="adults" min="1" value="1" />
+    </div>
+    <div class="field">
+      <label>Niños</label>
+      <input type="number" name="kids" min="0" value="0" />
+    </div>
+    <button type="submit" class="btn-primary full">
+      Obtener Recomendaciones
+    </button>
+  </form>
+
+  {% if result %}
+  <h3 class="title-list">Top {{ result|length }} destinos recomendados</h3>
+  <ul class="reco-list">
+    {% for r in result %}
+    <li><span class="dest">{{ r.Name }}</span> — {{ r.State }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</section>
+{% endblock %}
